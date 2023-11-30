@@ -4,14 +4,11 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.example.test.apiService.ApiService
-import com.example.test.model.GridCell
 import com.example.test.model.Matavimas
 import com.example.test.model.Stiprumai
 import com.example.test.model.Vartotojai
 import com.example.test.model.VartotojaiMAC
 import com.example.test.room.AppDao
-import java.lang.Math.abs
-import java.lang.Math.sqrt
 import javax.inject.Inject
 import kotlin.math.pow
 
@@ -167,7 +164,7 @@ class ConnectionUtil @Inject constructor(
 
 
     suspend fun addVartotojaiMACManually(mac: String, s1: Int, s2: Int, s3: Int) {
-        val maxId = appDao.getVartotojai().maxByOrNull { it.id }?.id ?: 0
+        val maxId = appDao.getVartotojai().maxByOrNull { it.id }?.id ?: 9
         appDao.addVartotojaiToRoom(
             Vartotojai(
                 id = maxId + 1,
@@ -206,7 +203,7 @@ class ConnectionUtil @Inject constructor(
         return matavimai.associateBy { Pair(it.x, it.y) }
     }
 
-    fun aggregateSignalStrengths(
+    private fun aggregateSignalStrengths(
         matavimai: List<Matavimas>,
         stiprumai: List<Stiprumai>
     ): Map<Pair<Int, Int>, Matavimas> {

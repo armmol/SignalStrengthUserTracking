@@ -39,7 +39,7 @@ class SecondFragment : Fragment() {
         }
         viewModel.rowCount.observe(this.viewLifecycleOwner) { rowCount ->
             if (rowCount != null && rowCount != 0)
-                binding.gridLayout.columnCount = rowCount
+                binding.gridLayout.rowCount = rowCount
         }
         val filledPositions = mutableSetOf<Pair<Int, Int>>()
         viewModel.userLocation.observe(this.viewLifecycleOwner) { userLocation ->
@@ -59,10 +59,10 @@ class SecondFragment : Fragment() {
                     matavimaiList?.forEach {
                         val gridItemView =
                             layoutInflater.inflate(R.layout.grid_item, binding.gridLayout, false)
-                        val layoutParams = GridLayout.LayoutParams()
-                        layoutParams.columnSpec = GridLayout.spec(it.x)
-                        layoutParams.rowSpec = GridLayout.spec(it.y)
-                        gridItemView.layoutParams = layoutParams
+                        val layoutParamsGreen = GridLayout.LayoutParams()
+                        layoutParamsGreen.columnSpec = GridLayout.spec(it.x)
+                        layoutParamsGreen.rowSpec = GridLayout.spec(it.y)
+                        gridItemView.layoutParams = layoutParamsGreen
                         val tvMatavimas = gridItemView.findViewById<TextView>(R.id.tvMatavimas)
                         tvMatavimas.text = "1"
                         if (!(it.x == userLocation.first && it.y == userLocation.second))
