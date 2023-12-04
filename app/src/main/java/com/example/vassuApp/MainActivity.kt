@@ -1,8 +1,7 @@
-package com.example.test
+package com.example.vassuApp
 
 import android.os.Bundle
 import android.util.Log
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -14,10 +13,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
-import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
+import com.example.test.R
 import com.example.test.databinding.ActivityMainBinding
-import com.example.test.viewmodel.DatabaseViewModel
+import com.example.vassuApp.viewmodel.DatabaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -41,15 +39,12 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         viewModel.load()
         viewModel.getGridLayout()
-        Log.e("Viewmodel",viewModel.hashCode().toString())
-
-        binding.fab.setOnClickListener { view ->
+        binding.fab.setOnClickListener { _ ->
             showInputDialog()
         }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
@@ -61,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         return when (item.itemId) {
             R.id.clear_all_data_from_room -> {
                 viewModel.clearDataFromRoom()
-                Toast.makeText(this, "All data deleted from room", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Data cleared", Toast.LENGTH_SHORT).show()
                 true
             }
             R.id.reload -> {

@@ -1,4 +1,4 @@
-package com.example.test
+package com.example.vassuApp
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

@@ -1,12 +1,11 @@
-package com.example.test.room
+package com.example.vassuApp.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import androidx.room.TypeConverter
 import androidx.room.TypeConverters
-import com.example.test.model.Matavimas
-import com.example.test.model.Stiprumai
-import com.example.test.model.Vartotojai
+import com.example.vassuApp.model.Matavimas
+import com.example.vassuApp.model.Stiprumai
+import com.example.vassuApp.model.Vartotojai
 
 @Database(
     entities = [Stiprumai::class, Matavimas::class, Vartotojai::class],

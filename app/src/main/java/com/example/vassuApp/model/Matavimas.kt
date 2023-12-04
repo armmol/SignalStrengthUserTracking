@@ -1,4 +1,4 @@
-package com.example.test.model
+package com.example.vassuApp.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

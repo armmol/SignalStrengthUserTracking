@@ -1,11 +1,11 @@
-package com.example.test.room
+package com.example.vassuApp.room
 
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Upsert
-import com.example.test.model.Matavimas
-import com.example.test.model.Stiprumai
-import com.example.test.model.Vartotojai
+import com.example.vassuApp.model.Matavimas
+import com.example.vassuApp.model.Stiprumai
+import com.example.vassuApp.model.Vartotojai
 
 @Dao
 interface AppDao {

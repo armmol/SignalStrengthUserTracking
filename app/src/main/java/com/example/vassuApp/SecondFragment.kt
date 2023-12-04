@@ -1,4 +1,4 @@
-package com.example.test
+package com.example.vassuApp
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,8 +8,9 @@ import android.view.ViewGroup
 import android.widget.GridLayout
 import android.widget.TextView
 import androidx.fragment.app.viewModels
+import com.example.test.R
 import com.example.test.databinding.FragmentSecondBinding
-import com.example.test.viewmodel.DatabaseViewModel
+import com.example.vassuApp.viewmodel.DatabaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

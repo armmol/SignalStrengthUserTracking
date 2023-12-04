@@ -1,13 +1,12 @@
-package com.example.test.dependencyInjection
+package com.example.vassuApp.dependencyInjection
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import androidx.room.Room
-import com.example.test.apiService.ApiService
-import com.example.test.repository.ConnectionUtil
-import com.example.test.room.AppDao
-import com.example.test.room.AppDatabase
-import com.google.gson.GsonBuilder
+import com.example.vassuApp.apiService.ApiService
+import com.example.vassuApp.repository.ConnectionUtil
+import com.example.vassuApp.room.AppDao
+import com.example.vassuApp.room.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,7 +15,6 @@ import dagger.hilt.components.SingletonComponent
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
-import java.sql.Connection
 import javax.inject.Singleton
 
 @Module
@@ -27,7 +25,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesConnectionUtil(
+    fun forConnectionUtil(
         apisService: ApiService,
         appDao: AppDao
     ): ConnectionUtil {
@@ -39,8 +37,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesApiHandler(): ApiService {
-        return Retrofit.Builder().baseUrl("http://192.168.1.184/TestDBConn/")
+    fun forApiHandler(): ApiService {
+        return Retrofit.Builder().baseUrl("http://192.168.1.184/VassuServer/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)
@@ -48,7 +46,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesPortalDatabase(@ApplicationContext context: Context): AppDatabase {
+    fun forPortalDatabase(@ApplicationContext context: Context): AppDatabase {
         return Room.databaseBuilder(
             context,
             AppDatabase::class.java,
@@ -59,7 +57,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun providesPortalDao(portalDatabase: AppDatabase): AppDao {
+    fun forPortalDao(portalDatabase: AppDatabase): AppDao {
         SQLiteDatabase.deleteDatabase(File(databaseName))
         return portalDatabase.getPortalDao()
     }

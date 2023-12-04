@@ -1,14 +1,14 @@
-package com.example.test.repository
+package com.example.vassuApp.repository
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.example.test.apiService.ApiService
-import com.example.test.model.Matavimas
-import com.example.test.model.Stiprumai
-import com.example.test.model.Vartotojai
-import com.example.test.model.VartotojaiMAC
-import com.example.test.room.AppDao
+import com.example.vassuApp.apiService.ApiService
+import com.example.vassuApp.model.Matavimas
+import com.example.vassuApp.model.Stiprumai
+import com.example.vassuApp.model.Vartotojai
+import com.example.vassuApp.model.VartotojaiMAC
+import com.example.vassuApp.room.AppDao
 import javax.inject.Inject
 import kotlin.math.pow
 

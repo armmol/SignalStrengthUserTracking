@@ -1,4 +1,4 @@
-package com.example.test.model
+package com.example.vassuApp.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -6,17 +6,17 @@ import androidx.room.ColumnInfo
 import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
 
-@Entity(tableName = "vartotojai")
+@Entity(tableName = "stiprumai")
 @Serializable
-data class Vartotojai(
+data class Stiprumai(
     @PrimaryKey
     @ColumnInfo(name = "id")
     @SerializedName("id")
     val id: Int,
 
-    @ColumnInfo(name = "mac")
-    @SerializedName("mac")
-    val mac: String,
+    @ColumnInfo(name = "matavimas")
+    @SerializedName("matavimas")
+    val matavimas: Int,
 
     @ColumnInfo(name = "sensorius")
     @SerializedName("sensorius")

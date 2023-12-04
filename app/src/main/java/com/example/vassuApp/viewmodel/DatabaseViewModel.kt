@@ -1,9 +1,9 @@
-package com.example.test.viewmodel
+package com.example.vassuApp.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.test.model.VartotojaiMAC
-import com.example.test.repository.ConnectionUtil
+import com.example.vassuApp.model.VartotojaiMAC
+import com.example.vassuApp.repository.ConnectionUtil
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async

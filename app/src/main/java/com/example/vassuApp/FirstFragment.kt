@@ -1,4 +1,4 @@
-package com.example.test
+package com.example.vassuApp
 
 import android.os.Bundle
 import android.util.Log
@@ -7,12 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.test.adapter.VartotojaiAdapter
 import com.example.test.databinding.FragmentFirstBinding
-import com.example.test.viewmodel.DatabaseViewModel
+import com.example.vassuApp.adapter.VartotojaiAdapter
+import com.example.vassuApp.viewmodel.DatabaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,7 +27,6 @@ class FirstFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        Log.e("Viewmodel F1",viewModel.hashCode().toString())
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
     }

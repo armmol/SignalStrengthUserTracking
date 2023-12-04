@@ -1,4 +1,4 @@
-package com.example.test.room
+package com.example.vassuApp.room
 
 import androidx.room.TypeConverter
 import com.google.gson.Gson
